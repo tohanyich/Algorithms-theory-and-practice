@@ -1,13 +1,9 @@
 def gcd(a, b):
-    if a == 0:
-        return b
-    if b == 0:
-        return a
+    assert a >= 0 and b >= 0
+    if a == 0 or b == 0:
+        return max(a, b)
 
-    if a >= b:
-        return gcd(a % b, b)
-    else:
-        return gcd(a, b % a)
+    return gcd(b % a, a)
 
 
 def main():

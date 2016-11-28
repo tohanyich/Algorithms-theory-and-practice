@@ -1,15 +1,10 @@
 # число Фибоначчи
 def fib(n):
     assert n >= 0
-
-    fib_numbers = [0, 1]
-    if n < 2:
-        return n
-
-    for i in range(2, n+1):
-        fib_numbers.append(fib_numbers[i-1] + fib_numbers[i-2])
-
-    return fib_numbers[n]
+    f0, f1 = 0, 1
+    for i in range(n - 1):
+        f0, f1 = f1, f0 + f1
+    return f1
 
 
 # Последняя цифра числа Фибоначчи
@@ -28,8 +23,8 @@ def fib_digit(n):
 
 def main():
     n = int(input())
-    # print(fib(n))
-    print(fib_digit(n))
+    print(fib(n))
+    # print(fib_digit(n))
 
 
 if __name__ == "__main__":
